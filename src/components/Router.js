@@ -5,14 +5,14 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-function AppRouter({ LoggIn }) {
+function AppRouter({ LoggIn, userObj }) {
   return (
     <Router>
       {LoggIn && <Navigation />}
       <Routes>
         {LoggIn ? (
           <>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home userObj={userObj} />} />
             <Route path="/profile" element={<Profile />} />
           </>
         ) : (
