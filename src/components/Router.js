@@ -8,12 +8,12 @@ import Navigation from "components/Navigation";
 function AppRouter({ LoggIn, userObj }) {
   return (
     <Router>
-      {LoggIn && <Navigation />}
+      {LoggIn && <Navigation userObj={userObj} />}
       <Routes>
         {LoggIn ? (
           <>
             <Route path="/" element={<Home userObj={userObj} />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile userObj={userObj} />} />
           </>
         ) : (
           <Route path="/" element={<Auth />} />
