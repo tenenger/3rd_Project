@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { dbService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
+import { storageService } from "fbase";
 
 function Tweet({ tweetObj, isOwner }) {
   const [edit, setEdit] = useState(false);
@@ -8,8 +10,10 @@ function Tweet({ tweetObj, isOwner }) {
   const onDelete = async () => {
     const message = window.confirm("삭제하시겠습니까?");
     const TweetTextRef = doc(dbService, "tweets", `${tweetObj.id}`);
+    const TweetFile = ref(storageService, tweetObj.FileURL);
     if (message) {
       await deleteDoc(TweetTextRef);
+      await deleteObject(TweetFile);
     }
   };
   const ToggleEditing = () => {
@@ -40,6 +44,7 @@ function Tweet({ tweetObj, isOwner }) {
       ) : (
         <>
           <h4>{tweetObj.text}</h4>
+          {tweetObj.FileURL && <img src={tweetObj.FileURL} alt="" />}
           {isOwner && (
             <>
               <button onClick={onDelete}>삭제</button>
