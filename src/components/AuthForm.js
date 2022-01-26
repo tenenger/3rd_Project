@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import React, { useState } from "react";
+import authform from "./css/Auth.module.css";
 
 function AuthForm() {
   const [form, setForm] = useState({
@@ -14,7 +15,7 @@ function AuthForm() {
   const { email, password } = form;
   // input에 value값을 줘야하기 때문에 이 코드도 필수이다.
   const [error, setError] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
+  const [newAccount, setNewAccount] = useState(false);
   const onChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -29,41 +30,77 @@ function AuthForm() {
     try {
       if (newAccount) {
         await createUserWithEmailAndPassword(authService, email, password);
+        alert("회원가입이 완료되었습니다.");
       } else {
         await signInWithEmailAndPassword(authService, email, password);
       }
     } catch (error) {
-      setError(error.message);
+      if (error.message === "Firebase: Error (auth/user-not-found).") {
+        setError("회원가입이 되지 않은 사용자입니다.");
+      } else if (error.message === "Firebase: Error (auth/invalid-email).") {
+        setError("올바른 이메일을 입력해주세요");
+      } else if (
+        error.message ===
+        "Firebase: Password should be at least 6 characters (auth/weak-password)."
+      ) {
+        setError("비밀번호를 6자리 이상으로 입력해주세요");
+      } else if (error.message === "Firebase: Error (auth/wrong-password).") {
+        setError("잘못된 비밀번호입니다.");
+      } else if (
+        error.message === "Firebase: Error (auth/email-already-in-use)."
+      ) {
+        setError("이미 사용중인 이메일입니다.");
+      } else {
+        setError(error.message);
+      }
     }
   };
 
   const toggleAccount = () => {
     setNewAccount((prev) => !prev);
   };
+  const style = {
+    fontSize: "10px",
+    color: "tomato",
+    paddingTop: "5px",
+  };
   return (
-    <>
-      <form onSubmit={onSubmit} action="">
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={onChange}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={onChange}
-        />
-        <input type="submit" value={newAccount ? "회원가입" : "로그인"} />
-        {error}
+    <div>
+      <form className={authform.loginform} onSubmit={onSubmit} action="">
+        <div className={authform.emailNpassword}>
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={onChange}
+            className={authform.login_input}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={onChange}
+            className={authform.login_input}
+          />
+        </div>
+        <div>
+          <input
+            className={authform.submit}
+            type="submit"
+            value={newAccount ? "회원가입 신청하기" : "로그인"}
+            className={[authform.login_input, authform.submit].join(" ")}
+          />
+        </div>
+        <div style={style}>{error}</div>
       </form>
-      <span onClick={toggleAccount}>{newAccount ? "로그인" : "회원가입"}</span>
-    </>
+      <div className={authform.signin} onClick={toggleAccount}>
+        {newAccount ? "로그인 하러가기" : "회원가입 하러가기"}
+      </div>
+    </div>
   );
 }
 export default AuthForm;

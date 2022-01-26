@@ -1,0 +1,48 @@
+.loginform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.submit {
+  cursor: pointer;
+  background-color: #f8f8f8;
+  box-shadow: 5px 5px rgba(102, 103, 171, 0.2);
+  transition: all 0.1s;
+}
+.submit:hover {
+  box-shadow: 4px 4px rgba(102, 103, 171, 0.2);
+  transform: translate(1px, 1px);
+}
+.submit:active {
+  box-shadow: 0px 0px rgba(102, 103, 171, 0.2);
+  transform: translate(5px, 5px);
+  transition: all 0.2s;
+}
+.signin {
+  text-align: center;
+  margin: 40px 0;
+  cursor: pointer;
+  background-color: #00acee;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  padding: 5px;
+}
+.emailNpassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+}
+.login_input {
+  border: 1px #6667ab solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+.login_input:focus {
+  outline: none;
+  background-color: #f8f9fa;
+}

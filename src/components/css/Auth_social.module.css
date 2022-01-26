@@ -1,0 +1,55 @@
+* {
+  border: 0;
+}
+.outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+.form {
+  border: 2px #6667ab solid;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(102, 103, 171, 0.2);
+  padding: 20px;
+  min-height: 400px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+}
+.google {
+  background-image: url("../../../public/img/구글로고.png");
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.google:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+.github {
+  background-image: url("../../../public/img/깃허브로고.png");
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.github:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}

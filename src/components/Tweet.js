@@ -31,6 +31,10 @@ function Tweet({ tweetObj, isOwner }) {
     });
     setEdit(false);
   };
+  const imgstyle = {
+    width: "200px",
+    height: "200px",
+  };
   return (
     <div>
       {edit ? (
@@ -44,7 +48,9 @@ function Tweet({ tweetObj, isOwner }) {
       ) : (
         <>
           <h4>{tweetObj.text}</h4>
-          {tweetObj.FileURL && <img src={tweetObj.FileURL} alt="" />}
+          {tweetObj.FileURL && (
+            <img src={tweetObj.FileURL} alt="" style={imgstyle} />
+          )}
           {isOwner && (
             <>
               <button onClick={onDelete}>삭제</button>
