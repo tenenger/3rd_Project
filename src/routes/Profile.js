@@ -24,6 +24,7 @@ function Profile({ userObj }) {
   useEffect(() => {
     getMyTweets();
   }, []);
+  // 내 트윗이 수정될 경우에 다시 불러와야하는데, 그렇지 않은 코드여서 발생한 오류. 만약 useEffect 내부에 메소드를 사용한경우에는 useCallback과 params를 사용한다.
   return (
     <>
       <button onClick={onLogOutClick}>로그아웃</button>

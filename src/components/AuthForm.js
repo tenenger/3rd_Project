@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import React, { useState } from "react";
-import authform from "./css/Auth.module.css";
+import authFM from "./css/Auth.module.css";
 
 function AuthForm() {
   const [form, setForm] = useState({
@@ -66,8 +66,8 @@ function AuthForm() {
   };
   return (
     <div>
-      <form className={authform.loginform} onSubmit={onSubmit} action="">
-        <div className={authform.emailNpassword}>
+      <form className={authFM.loginform} onSubmit={onSubmit} action="">
+        <div className={authFM.emailNpassword}>
           <input
             name="email"
             type="email"
@@ -75,7 +75,7 @@ function AuthForm() {
             required
             value={email}
             onChange={onChange}
-            className={authform.login_input}
+            className={authFM.login_input}
           />
           <input
             name="password"
@@ -84,20 +84,19 @@ function AuthForm() {
             required
             value={password}
             onChange={onChange}
-            className={authform.login_input}
+            className={authFM.login_input}
           />
         </div>
         <div>
           <input
-            className={authform.submit}
             type="submit"
             value={newAccount ? "회원가입 신청하기" : "로그인"}
-            className={[authform.login_input, authform.submit].join(" ")}
+            className={`${authFM.login_input} ${authFM.submit}`}
           />
         </div>
         <div style={style}>{error}</div>
       </form>
-      <div className={authform.signin} onClick={toggleAccount}>
+      <div className={authFM.signin} onClick={toggleAccount}>
         {newAccount ? "로그인 하러가기" : "회원가입 하러가기"}
       </div>
     </div>
