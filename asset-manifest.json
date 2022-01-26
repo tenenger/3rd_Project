@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.js": "/twitter/static/js/main.56c4853a.js",
+    "main.css": "/twitter/static/css/main.ccbd7786.css",
+    "main.js": "/twitter/static/js/main.6e3a5272.js",
+    "static/media/깃허브로고.png": "/twitter/static/media/깃허브로고.797186144e6a0a254c1a.png",
+    "static/media/twitter_logo.svg": "/twitter/static/media/twitter_logo.707f29c4af274da0f49e.svg",
     "index.html": "/twitter/index.html",
-    "main.56c4853a.js.map": "/twitter/static/js/main.56c4853a.js.map"
+    "main.ccbd7786.css.map": "/twitter/static/css/main.ccbd7786.css.map",
+    "main.6e3a5272.js.map": "/twitter/static/js/main.6e3a5272.js.map"
   },
   "entrypoints": [
-    "static/js/main.56c4853a.js"
+    "static/css/main.ccbd7786.css",
+    "static/js/main.6e3a5272.js"
   ]
 }
