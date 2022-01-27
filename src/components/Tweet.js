@@ -46,7 +46,7 @@ function Tweet({ tweetObj, isOwner }) {
           <button onClick={ToggleEditing}>취소</button>
         </>
       ) : (
-        <>
+        <div>
           <h4>{tweetObj.text}</h4>
           {tweetObj.FileURL && (
             <img src={tweetObj.FileURL} alt="" style={imgstyle} />
@@ -57,7 +57,7 @@ function Tweet({ tweetObj, isOwner }) {
               <button onClick={ToggleEditing}>수정</button>
             </>
           )}
-        </>
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR&display=swap");
+.App {
+  font-family: "Bebas Neue", cursive;
+  font-family: "Noto Sans KR", sans-serif;
+}
+input {
+  font-family: "Bebas Neue", cursive;
+  font-family: "Noto Sans KR", sans-serif;
+}
+button {
+  font-family: "Bebas Neue", cursive;
+  font-family: "Noto Sans KR", sans-serif;
+}

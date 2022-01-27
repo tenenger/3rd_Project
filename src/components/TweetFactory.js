@@ -3,6 +3,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import React, { useRef, useState } from "react";
 import { v4 } from "uuid";
+import TwetFactory from "./css/TweetFactory.module.css";
+import { SvgImage } from "./Svgfile";
 
 function TweetFactory({ userObj }) {
   const [tweet, setTweet] = useState("");
@@ -46,27 +48,48 @@ function TweetFactory({ userObj }) {
     fileInput.current.value = null;
   };
   return (
-    <form onSubmit={onSubmit} action="">
-      <input
+    <form onSubmit={onSubmit} action="" className={TwetFactory.outer}>
+      <h3>한마디하기</h3>
+      <textarea
         type="text"
-        placeholder="오늘 기분은 어떠하신가요?"
+        placeholder="글을 적어서 오늘 생긴 일을 표현하세요"
         maxLength={120}
         value={tweet}
         onChange={onChange}
+        className={TwetFactory.textinput}
       />
-      <input
-        ref={fileInput}
-        type="file"
-        accept="image/*"
-        onChange={onFileChange}
-      />
-      <input value="트윗남기기" type="submit" />
-      {File && (
+      <div className={TwetFactory.click}>
         <div>
-          <img src={File} alt="" width="50px" height="50px" />
-          <button onClick={onFileClear}>취소</button>
+          <label className={TwetFactory.fileinput}>
+            <SvgImage />
+            <input
+              ref={fileInput}
+              type="file"
+              accept="image/*"
+              onChange={onFileChange}
+              style={{ display: "none" }}
+            />
+          </label>
         </div>
-      )}
+        {File && (
+          <div className={TwetFactory.ImagePreview}>
+            <img src={File} alt="" width="50px" height="50px" />
+            <button
+              className={TwetFactory.ImageCancelbtn}
+              onClick={onFileClear}
+            >
+              취소
+            </button>
+          </div>
+        )}
+        <div>
+          <input
+            value="트윗남기기"
+            type="submit"
+            className={TwetFactory.submit}
+          />
+        </div>
+      </div>
     </form>
   );
 }
