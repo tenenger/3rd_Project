@@ -1,0 +1,68 @@
+.inner {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  word-break: break-all;
+  margin: 50px 20px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content img:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+.delete_btn {
+  cursor: pointer;
+  margin: 5px 10px;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+  background-color: tomato;
+  border-radius: 5px;
+  border-bottom: 5px solid rgba(160, 83, 69, 0.2);
+}
+.delete_btn:hover {
+  transform: translateY(2px);
+  border-bottom: 3px solid rgba(160, 83, 69, 0.2);
+}
+.delete_btn:active {
+  transform: translateY(5px);
+  border-bottom: 0px solid rgba(160, 83, 69, 0.2);
+}
+.btn {
+  cursor: pointer;
+  margin: 5px 10px;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+}
+.delete_btn {
+  background-color: tomato;
+  border-radius: 5px;
+  border-bottom: 5px solid rgba(160, 83, 69, 0.4);
+}
+.delete_btn:hover {
+  transform: translateY(2px);
+  border-bottom: 3px solid rgba(160, 83, 69, 0.4);
+}
+.delete_btn:active {
+  transform: translateY(5px);
+  border-bottom: 0px solid rgba(160, 83, 69, 0.4);
+}
+.update_btn {
+  background-color: #2476d6;
+  border-radius: 5px;
+  border-bottom: 5px solid rgba(24, 76, 136, 0.4);
+}
+.update_btn:hover {
+  transform: translateY(2px);
+  border-bottom: 3px solid rgba(24, 76, 136, 0.4);
+}
+.update_btn:active {
+  transform: translateY(5px);
+  border-bottom: 0px solid rgba(24, 76, 136, 0.4);
+}

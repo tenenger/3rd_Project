@@ -1,0 +1,10 @@
+/* .inner {
+  column-count: 4;
+  column-width: 300px;
+  margin: auto;
+} */
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

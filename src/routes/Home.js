@@ -3,6 +3,7 @@ import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import Tweet from "components/Tweet";
 import TweetFactory from "components/TweetFactory";
+import home_style from "../components/css/home.module.css";
 
 function Home({ userObj }) {
   const [getDB, setGetDB] = useState([]);
@@ -22,9 +23,9 @@ function Home({ userObj }) {
   }, []);
 
   return (
-    <div>
+    <div className={home_style.outer}>
       <TweetFactory userObj={userObj} />
-      <div>
+      <div className={home_style.inner}>
         {getDB.map((tweet) => (
           <Tweet
             key={tweet.id}

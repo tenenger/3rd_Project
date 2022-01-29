@@ -3,6 +3,7 @@ import { dbService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
 import { storageService } from "fbase";
+import twet_style from "./css/Tweet.module.css";
 
 function Tweet({ tweetObj, isOwner }) {
   const [edit, setEdit] = useState(false);
@@ -36,7 +37,7 @@ function Tweet({ tweetObj, isOwner }) {
     height: "200px",
   };
   return (
-    <div>
+    <div className={twet_style.inner}>
       {edit ? (
         <>
           <form onSubmit={onSubmit}>
@@ -46,16 +47,26 @@ function Tweet({ tweetObj, isOwner }) {
           <button onClick={ToggleEditing}>취소</button>
         </>
       ) : (
-        <div>
+        <div className={twet_style.content}>
           <h4>{tweetObj.text}</h4>
           {tweetObj.FileURL && (
             <img src={tweetObj.FileURL} alt="" style={imgstyle} />
           )}
           {isOwner && (
-            <>
-              <button onClick={onDelete}>삭제</button>
-              <button onClick={ToggleEditing}>수정</button>
-            </>
+            <div>
+              <button
+                className={`${twet_style.delete_btn} ${twet_style.btn}`}
+                onClick={onDelete}
+              >
+                삭제
+              </button>
+              <button
+                className={`${twet_style.update_btn} ${twet_style.btn}`}
+                onClick={ToggleEditing}
+              >
+                수정
+              </button>
+            </div>
           )}
         </div>
       )}
