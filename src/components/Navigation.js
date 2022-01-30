@@ -16,7 +16,7 @@ function Navigation({ userObj }) {
         <li>
           <Link to="/profile">
             <SvgProfile />
-            <span>{userObj.displayName}의 프로필</span>
+            <span>프로필</span>
           </Link>
         </li>
       </ul>

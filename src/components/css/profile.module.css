@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.outer {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+.inner_left {
+  float: left;
+  align-items: center;
+  width: 400px;
+}
+.inner_right {
+  float: left;
+  align-items: center;
+  width: 400px;
+}
+.profileimage {
+  border-radius: 50%;
+  width: 50px;
+}
+.btn {
+  cursor: pointer;
+  margin: 5px 10px;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+}
+.logoutbtn {
+  background-color: black;
+  border-bottom: 5px solid rgba(239, 239, 239, 0.4);
+  position: relative;
+  float: right;
+}
+.logoutbtn:hover {
+  transform: translateY(2px);
+  border-bottom: 3px solid rgba(239, 239, 239, 0.4);
+}
+.logoutbtn:active {
+  transform: translateY(5px);
+  border-bottom: 0px solid rgba(239, 239, 239, 0.4);
+}
