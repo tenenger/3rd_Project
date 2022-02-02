@@ -6,7 +6,7 @@ Front-end: HTML, CSS, JSX, React<br>
 
 Back-end: Firebase
 
-Deployment: GitPages
+Deployment: GitHub Pages
 
 # 도메인
 https://tenenger.github.io/twitter/
