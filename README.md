@@ -1,2 +1,12 @@
-# twitter
-[4th Project] React, Firebase를 이용하여 트위터를 클론코딩 개발했습니다. https://tenenger.github.io/twitter/
+# 목표
+React 기술 습득
+
+# 사용한 기술
+Front-end: HTML, CSS, JSX, React<br>
+
+Back-end: Firebase
+
+Deployment: GitPages
+
+# 도메인
+https://tenenger.github.io/twitter/
