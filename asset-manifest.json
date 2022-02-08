@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/twitter/static/css/main.edf2674d.css",
-    "main.js": "/twitter/static/js/main.c81c6f7f.js",
-    "static/media/깃허브로고.png": "/twitter/static/media/깃허브로고.797186144e6a0a254c1a.png",
-    "static/media/twitter_logo.svg": "/twitter/static/media/twitter_logo.707f29c4af274da0f49e.svg",
-    "index.html": "/twitter/index.html",
-    "main.edf2674d.css.map": "/twitter/static/css/main.edf2674d.css.map",
-    "main.c81c6f7f.js.map": "/twitter/static/js/main.c81c6f7f.js.map"
+    "main.css": "/4th_Project/static/css/main.e183e447.css",
+    "main.js": "/4th_Project/static/js/main.c81c6f7f.js",
+    "static/media/깃허브로고.png": "/4th_Project/static/media/깃허브로고.797186144e6a0a254c1a.png",
+    "static/media/twitter_logo.svg": "/4th_Project/static/media/twitter_logo.707f29c4af274da0f49e.svg",
+    "index.html": "/4th_Project/index.html",
+    "main.e183e447.css.map": "/4th_Project/static/css/main.e183e447.css.map",
+    "main.c81c6f7f.js.map": "/4th_Project/static/js/main.c81c6f7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.edf2674d.css",
+    "static/css/main.e183e447.css",
     "static/js/main.c81c6f7f.js"
   ]
 }
